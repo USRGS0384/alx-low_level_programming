@@ -12,18 +12,18 @@ int main(void)
 	int m;
 	int p;
 
-	for (n = '0'; n <= '9'; n++)
+	for (p = '0'; p <= '9'; p++)
 	{
 	for (m = '0'; m <= '9'; m++)
 	{
-	for (p = '0'; p <= '9'; p++)
+	for (n = '0'; n <= '9'; n++)
 	{
 	if (!((n == m) || (m == p) || (m > n) || (p > m)))
 	{
 		putchar(p);
 		putchar(m);
 		putchar(n);
-	if (!(p == '9' && m == '7' && n == '0'))
+	if (!(n == '9' && m == '8' && p == '7'))
 	{
 	putchar(',');
 	putchar(' ');
