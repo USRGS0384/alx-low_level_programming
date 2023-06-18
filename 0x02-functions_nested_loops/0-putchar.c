@@ -1,7 +1,6 @@
 #include "main.h"
-#include <unistd.h>
 /**
- * _putchar - Entry point
+ * _putchar - main function
  * Description: print putchar with a new line
  * Return: Always 0 (Success)
  */
