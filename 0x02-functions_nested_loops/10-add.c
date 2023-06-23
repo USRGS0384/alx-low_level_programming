@@ -1,11 +1,11 @@
 #include "main.h"
 /**
 * add - sums up numbers
-* @n: number 1
-* @m: number 2
+* @n: number one
+* @m: number two
 * Return: returns 0 (success)
 */
-int add(int n1, int n2)
+int add(int n, int m)
 {
-	return (n1 + n2);
+	return (n + m);
 }
