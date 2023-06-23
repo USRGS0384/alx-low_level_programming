@@ -8,7 +8,7 @@ int main(void)
 {
 	int x;
 	unsigned long y1 = 0, y2 = 1, y3;
-	
+
 	for (x = 0; x < 50; x++)
 	{
 	y3 = y1 + y2;
