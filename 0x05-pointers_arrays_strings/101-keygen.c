@@ -1,27 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 /**
- *main- genrate password
- *Return:nothing
+ * main - entry point generates a random password
+ *
+ * Return: the generated password
  */
 int main(void)
 {
-srand((unsigned int)time(NULL));
-char pass[13];
-int i;
+char c;
+int x;
 
-for (i = 0; i < 4; i++)
+srand(time(0));
+while (x <= 2645)
 {
-pass[3 * i] = '0' + (rand() % 10);
-char capLetter = 'A' + (rand() % 26);
-pass[(3 * i) + 1] = capLetter;
-char letter = 'a' + (rand() % 26);
-pass[(3 * i) + 2] = letter;
+c = rand() % 128;
+x += c;
+putchar(c);
 }
-pass[3 * i] = '\0';
-printf("generated password : %s\n\n", pass);
-printf("\n\n");
+putchar(2772 - x);
 return (0);
 }
