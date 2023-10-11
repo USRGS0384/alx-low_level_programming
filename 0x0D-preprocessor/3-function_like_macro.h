@@ -9,6 +9,6 @@
  * Return: Header file with macrolike value.
  */
 
-#define ABS(x) ((x) < 0 ? -(x) * (x) : (x))
+#define ABS(x) ((x) < (0) ? -(x) : (x))
 
 #endif
