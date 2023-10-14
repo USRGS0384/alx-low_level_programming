@@ -1,27 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - entry point
- * @argc: input th number of parameters
- * @argv: ob bytes paramters
- * Description: prints opcode in hexa
- * Return: Always 0 (success)
- */
+ * main- Entry point
+(* a blank line
+ *@argc: the number of parameters.
+ *@argv: the parameeters in the case the number ob bytes.
+* Return: 0 in succes
+*/
 int main(int argc, char *argv[])
 {
 	int i, n;
 
-	if (argc != 2)
 
+	if (argc != 2)
 	{
-		printf("error\n");
+		printf("Error\n");
 		return (1);
 	}
-
 	n = atoi(argv[1]);
 	if (n < 0)
-
 	{
 		printf("Error\n");
 		exit(2);
