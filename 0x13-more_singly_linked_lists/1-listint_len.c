@@ -3,7 +3,6 @@
 
 /**
  * listint_len - prints the number of elements
- *         
  * @h: A pointer to the head of the listint_t list.
  *
  * Return: All the elements in the listint_t list.
