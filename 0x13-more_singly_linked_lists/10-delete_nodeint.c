@@ -7,36 +7,33 @@
  * @index: index of the node that should be deleted at start
  *
  * Return:  1 if it succeeded else -1 if failed.
+ *
  */
-
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *temp_variable, *temp_variable2;
-	unsigned int i = 0;
+	listint_t *tmp, *copy = *head;
+	unsigned int node;
 
-	if (head == NULL || *head == NULL)
+	if (copy == NULL)
 		return (-1);
 
 	if (index == 0)
 	{
-		temp_variable = *head;
 		*head = (*head)->next;
-		free(temp_variable);
+		free(copy);
 		return (1);
 	}
 
-	while (i != index - 1 && temp_variable->next != NULL)
+	for (node = 0; node < (index - 1); node++)
 	{
-		temp_variable = temp_variable->next;
-		i++;
-	}
-	if (i == index - 1 && temp_variable->next != NULL)
-	{
-		temp_variable2 = temp_variable->next;
-		temp_variable->next = temp_variable2->next;
-		free(temp_variable2);
-		return (1);
+		if (copy->next == NULL)
+			return (-1);
+
+		copy = copy->next;
 	}
 
-	return (-1);
+	tmp = copy->next;
+	copy->next = tmp->next;
+	free(tmp);
+	return (1);
 }
