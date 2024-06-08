@@ -1,2 +1,4 @@
+name of the school
+
 all: gcc main.c school.c
-		gcc main.c school.c -o school
+	gcc main.c school.c -o school
