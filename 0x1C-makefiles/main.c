@@ -1,17 +1,12 @@
-#include<stdio.h>
-#include"header.h"
+#include "m.h"
+
 /**
- * main - entry point
+ * main - Entry point
  *
- * Return: always nothing
- *
+ * Return: Always 
  */
-main(void)
+int main(void)
 {
-	printf("\nThis is maic.c"\n);
-	printf("\nCalling hello function");
-	hello();
-	printf("\nCalling add function\n");
-	add(5,7);
-	printf("\nBack in main.c\");
+	print_school();
+	return (EXIT_SUCCESS);
 }

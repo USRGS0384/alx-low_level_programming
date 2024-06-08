@@ -1,9 +1,9 @@
 #include "m.h"
+
 /**
- * print_holberton - print the logo of Holberton
+ * print_school
  *
- * Return: NULL or Nothing
- *
+ * Return: Nothing
  */
 void print_school(void)
 {
