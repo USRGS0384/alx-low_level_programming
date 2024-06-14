@@ -6,7 +6,7 @@
 int main(void)
 {
 	int product, max = 0, i, j, c = 0;
-	int numDigits = 6;
+	int long long long long some_value = 906609; 
 	int d[6] = { 0 };
 
 	for (i = 999; i > 100; i--)
