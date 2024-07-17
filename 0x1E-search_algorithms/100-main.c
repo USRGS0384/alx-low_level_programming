@@ -1,20 +1,49 @@
+#ifndef SEARCH_ALGOS_H
+#define SEARCH_ALGOS_H
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "search_algos.h"
+#include <math.h>
 
 /**
- * main - Entry point
+ * struct listint_s - singly linked list
  *
- * Return: Always EXIT_SUCCESS
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
  */
-int main(void)
+typedef struct listint_s
 {
-    int array[] = {
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    };
-    size_t size = sizeof(array) / sizeof(array[0]);
+	int n;
+	size_t index;
+	struct listint_s *next;
+} listint_t;
 
-    printf("Found %d at index: %d\n\n", 6, jump_search(array, size, 6));
-    printf("Found %d at index: %d\n\n", 1, jump_search(array, size, 1));
-    printf("Found %d at index: %d\n", 999, jump_search(array, size, 999));
-    return (EXIT_SUCCESS);
+/**
+ * struct skiplist_s - Singly linked list with an express lane
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ * @express: Pointer to the next node in the express lane
+ *
+ * Description: singly linked list node structure with an express lane
+ */
+typedef struct skiplist_s
+{
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
+} skiplist_t;
+
+int linear_search(int *array, size_t size, int value);
+int binary_search(int *array, size_t size, int value);
+int jump_search(int *array, size_t size, int value);
+int interpolation_search(int *array, size_t size, int value);
+int exponential_search(int *array, size_t size, int value);
+int advanced_binary(int *array, size_t size, int value);
+
+#endif
