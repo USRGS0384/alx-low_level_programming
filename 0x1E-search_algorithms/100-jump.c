@@ -12,33 +12,26 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int index, m, k, prev;
+	size_t i, jump_step, prev_index;
 
 	if (array == NULL || size == 0)
 		return (-1);
 
-	m = (int)sqrt((double)size);
-	k = 0;
-	prev = index = 0;
-
-	do {
-		printf("Value checked array[%d] = [%d]\n", index, array[index]);
-
-		if (array[index] == value)
-			return (index);
-		k++;
-		prev = index;
-		index = k * m;
-	} while (index < (int)size && array[index] < value);
-
-	printf("Value found between indexes [%d] and [%d]\n", prev, index);
-
-	for (; prev <= index && prev < (int)size; prev++)
+	/* Handle invalid input */
+	jump_step = sqrt(size);
+	for (i = prev_index = 0; prev_index < size && array[prev_index] < value;)
 	{
-		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-		if (array[prev] == value)
-			return (prev);
+		printf("Value checked array[%ld] = [%d]\n", prev_index, array[prev_index]);
+		i = prev_index;
+		prev_index += jump_step;
 	}
 
-	return (-1);
+	printf("Value found between indexes [%ld] and [%ld]\n", i, prev_index);
+
+	prev_index = prev_index < size - 1 ? prev_index : size - 1;
+	for (; i < prev_index && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	return (array[i] == value ? (int)i : -1);
 }
